@@ -35,7 +35,7 @@ export function Hero() {
 
               <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-xl text-pretty">
                 FinanceGuy tracks your spending, keeps you on budget, and helps
-                you build better habits—automatically.
+                you build better habits.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">

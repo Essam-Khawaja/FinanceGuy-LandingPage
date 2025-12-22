@@ -79,7 +79,7 @@ export function Predictor() {
               </h3>
               <p className="text-base text-foreground/80 leading-relaxed">
                 Perfect for irregular income, impulse spending, and student
-                life. No need to understand complex financial jargon—just spend
+                life. No need to understand complex financial jargon; just spend
                 naturally and let FinanceGuy do the thinking.
               </p>
             </div>

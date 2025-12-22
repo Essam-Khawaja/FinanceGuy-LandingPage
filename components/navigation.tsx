@@ -8,7 +8,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Flame className="h-6 w-6 text-accent" />
-          <span className="font-semibold text-foreground hidden sm:inline">
+          <span className="font-semibold text-foreground sm:inline">
             FinanceGuy
           </span>
         </div>
