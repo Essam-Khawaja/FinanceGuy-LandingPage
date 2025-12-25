@@ -4,23 +4,26 @@ import type React from "react";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 export function Waitlist() {
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!email) {
-      setError("Please enter a valid email");
+      toast({
+        title: "Email required",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
       return;
     }
 
     setLoading(true);
-    setError("");
 
     try {
       const response = await fetch("/api/waitlist", {
@@ -29,17 +32,29 @@ export function Waitlist() {
         body: JSON.stringify({ email }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || "Failed to join waitlist");
+        toast({
+          title: "Error",
+          description: data.error || "Failed to join waitlist",
+          variant: "destructive",
+        });
+        return;
       }
 
-      setSubmitted(true);
+      toast({
+        title: "Welcome to the waitlist!",
+        description: "Check your email for a confirmation message.",
+      });
       setEmail("");
-      setTimeout(() => setSubmitted(false), 3000);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong");
-      setTimeout(() => setError(""), 3000);
+      toast({
+        title: "Error",
+        description:
+          err instanceof Error ? err.message : "Something went wrong",
+        variant: "destructive",
+      });
     } finally {
       setLoading(false);
     }
@@ -77,16 +92,6 @@ export function Waitlist() {
             {loading ? "Joining..." : "Join Waitlist"}
           </Button>
         </form>
-
-        {submitted && (
-          <p className="text-accent text-sm font-medium mb-4">
-            Thanks for joining! Check your email.
-          </p>
-        )}
-
-        {error && (
-          <p className="text-red-500 text-sm font-medium mb-4">{error}</p>
-        )}
 
         <p className="text-xs text-muted-foreground">
           No spam. Early access only. We respect your privacy.
