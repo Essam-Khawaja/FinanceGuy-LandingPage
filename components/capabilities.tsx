@@ -1,61 +1,60 @@
 "use client";
 
-import { Eye, Zap, Hammer, Rocket } from "lucide-react";
+import { Trophy, Coins, Sword } from "lucide-react";
 import { GridBackground } from "./grid-background";
 
 export function Capabilities() {
   const capabilities = [
     {
-      icon: Eye,
-      title: "Understands Your Spending",
+      icon: Coins,
+      title: "Treasury",
       description:
-        "See where your money actually goes with crystal-clear insights.",
+        "Track your net inflow and watch your chest fill up with every wise choice.",
     },
     {
-      icon: Zap,
-      title: "Keeps You Consistent",
-      description: "Streaks, reminders, and gentle nudges keep you on track.",
-    },
-    {
-      icon: Hammer,
-      title: "Helps You Build Habits",
+      icon: Trophy,
+      title: "Rations",
       description:
-        "Small actions that add up over time into real financial progress.",
+        "Set spending limits that protect your weekly runs from surprise damage.",
     },
     {
-      icon: Rocket,
-      title: "Learns Over Time",
-      description: "Coming soon: Predicts risky spending before it happens.",
+      icon: Sword,
+      title: "Quests",
+      description:
+        "Turn goals into missions so consistency feels rewarding, not restrictive.",
     },
   ];
 
   return (
-    <GridBackground className="text-white">
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-secondary/10">
+    <GridBackground>
+      <section
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-card/50"
+        id="pillars"
+      >
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-              Your Assistant, Your Way
+            <h2 className="text-3xl sm:text-4xl text-foreground mb-4">
+              CHOOSE YOUR BUILD
             </h2>
-            <p className="text-lg text-muted-foreground">
-              FinanceGuy speaks your language. No jargon. No overwhelm. Just
-              guidance.
+            <p className="text-2xl text-muted-foreground font-body">
+              Three core systems to keep your gold moving in the right
+              direction.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {capabilities.map((capability, idx) => {
               const Icon = capability.icon;
               return (
                 <div
                   key={idx}
-                  className="p-8 rounded-xl border border-border/50 bg-card/30 hover:border-accent/50 transition-all group"
+                  className="p-8 rounded-lg border-2 border-foreground/40 bg-card hover:border-accent transition-all group"
                 >
-                  <Icon className="w-8 h-8 mb-4 text-muted-foreground group-hover:text-accent transition-colors" />
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                  <Icon className="w-8 h-8 mb-4 text-primary group-hover:text-accent transition-colors" />
+                  <h3 className="text-lg text-foreground mb-3">
                     {capability.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-xl text-muted-foreground leading-relaxed font-body">
                     {capability.description}
                   </p>
                 </div>

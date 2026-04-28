@@ -63,12 +63,12 @@ export function Waitlist() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8" id="waitlist">
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-          Start building better money habits — early.
+        <h2 className="text-3xl sm:text-4xl text-foreground mb-4">
+          JOIN THE GUILD EARLY
         </h2>
-        <p className="text-lg text-muted-foreground mb-12">
-          Join our waitlist for early access as we build the future of student
-          financial guidance.
+        <p className="text-2xl text-muted-foreground mb-12 font-body">
+          Claim your spot for early access while we forge the first FinanceGuy
+          realm.
         </p>
 
         <form
@@ -82,19 +82,19 @@ export function Waitlist() {
             onChange={(e) => setEmail(e.target.value)}
             disabled={loading}
             required
-            className="flex-1 px-4 py-3 rounded-lg bg-card border border-border placeholder-muted-foreground text-foreground focus:outline-none focus:border-accent/50 transition-colors"
+            className="flex-1 px-4 py-3 rounded-lg bg-card border-2 border-foreground/45 placeholder-muted-foreground text-foreground text-xl font-body focus:outline-none focus:ring-2 focus:ring-accent transition-colors"
           />
           <Button
             type="submit"
             disabled={loading}
-            className="px-8 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-accent/90 transition-all hover:shadow-lg disabled:opacity-50"
+            className="h-[54px] px-8 rounded-lg disabled:opacity-50"
           >
-            {loading ? "Joining..." : "Join Waitlist"}
+            {loading ? "JOINING..." : "ENTER WAITLIST"}
           </Button>
         </form>
 
-        <p className="text-xs text-muted-foreground">
-          No spam. Early access only. We respect your privacy.
+        <p className="text-lg text-muted-foreground font-body">
+          No spam. Early access only. Leave anytime.
         </p>
       </div>
     </section>
