@@ -1,51 +1,47 @@
 "use client"
 
-import { Lock, BookOpen, Sparkles, Handshake } from "lucide-react"
+import { Shield, BookOpen, Sparkles } from "lucide-react"
 
 export function Philosophy() {
   const values = [
     {
-      icon: Lock,
+      icon: Shield,
       title: "Privacy First",
-      description: "Your data is yours. We don't sell it.",
+      description: "Your ledger stays yours. We do not sell your data.",
     },
     {
       icon: BookOpen,
       title: "Built for Students",
-      description: "Made with your challenges in mind.",
+      description: "Designed around real student routines and constraints.",
     },
     {
       icon: Sparkles,
-      title: "Simple by Design",
-      description: "No clutter. Just clarity.",
-    },
-    {
-      icon: Handshake,
-      title: "Your Success",
-      description: "We win when you win.",
+      title: "Friendly Guidance",
+      description: "Clear nudges, no finance lecture mode.",
     },
   ]
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-secondary/10 to-background">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-card/40 to-background" id="social-proof">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">Built With Trust</h2>
+        <div className="text-center mb-10 p-8 rounded-lg border-2 border-foreground/35 bg-card">
+          <h2 className="text-3xl sm:text-4xl text-foreground mb-4">FORGED WITH STUDENTS</h2>
+          <p className="text-2xl text-muted-foreground font-body">
+            Built with students at UCalgary. More realms joining soon.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-3 gap-6">
           {values.map((value, idx) => {
             const Icon = value.icon
             return (
               <div
                 key={idx}
-                className={`p-6 rounded-xl border border-border/50 text-center transition-all hover:border-accent/50 ${
-                  idx % 2 === 0 ? "bg-card/30" : "bg-muted/10"
-                }`}
+                className="p-6 rounded-lg border-2 border-foreground/35 text-center transition-all hover:border-accent bg-card/80"
               >
                 <Icon className="w-8 h-8 text-accent mx-auto mb-3" />
-                <h3 className="font-semibold text-foreground mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
+                <h3 className="text-foreground mb-2">{value.title}</h3>
+                <p className="text-xl text-muted-foreground font-body">{value.description}</p>
               </div>
             )
           })}

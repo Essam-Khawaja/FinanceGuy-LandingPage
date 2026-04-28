@@ -1,0 +1,4 @@
+- [ ] Create favicon: gold coin on brown square (`32x32`, `180x180`, SVG source).
+- [ ] Create OG image: parchment backdrop + FINANCEGUY + tagline (`1200x630`).
+- [ ] Export social preview variants for X and LinkedIn crops.
+- [ ] Wire generated assets in `app/layout.tsx` metadata icons and Open Graph images.
